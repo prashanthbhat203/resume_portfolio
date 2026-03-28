@@ -34,11 +34,17 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Prepare Deploy Directory
+        run: |
+          mkdir -p public
+          # Copy only necessary web files, avoiding exposing .git, .github, .agents, etc.
+          cp index.html styles.css script.js public/
+          # Copy assets folder if it gets added in the future
+          cp -r assets public/ 2>/dev/null || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: './public'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
