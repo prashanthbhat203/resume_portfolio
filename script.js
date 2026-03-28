@@ -36,15 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sticky Navbar style on scroll
     const navbar = document.querySelector('.navbar');
+    let ticking = false;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(13, 17, 23, 0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(13, 17, 23, 0.8)';
-            navbar.style.boxShadow = 'none';
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    if (navbar) navbar.classList.add('scrolled');
+                } else {
+                    if (navbar) navbar.classList.remove('scrolled');
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
-    });
+    }, { passive: true });
 
     // Intersection Observer for Scroll Animations
     const observerOptions = {
@@ -62,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-fade-in');
     animatedElements.forEach(el => observer.observe(el));
 
     // Form submission handle (prevent default to simulate success)

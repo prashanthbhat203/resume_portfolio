@@ -12,9 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Non-critical external styles deferred -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <link rel="stylesheet" href="styles.css">
+    
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -43,22 +48,22 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
-            <div class="container hero-container animate-on-scroll">
+            <div class="container hero-container">
                 <div class="hero-content">
-                    <span class="greeting">Hello, I'm</span>
-                    <h1 class="name">Prashant <span>Bhat</span></h1>
-                    <h2 class="title">Technology Analyst</h2>
-                    <p class="description">
+                    <span class="greeting animate-on-scroll stagger-1">Hello, I'm</span>
+                    <h1 class="name animate-on-scroll stagger-2">Prashant <span>Bhat</span></h1>
+                    <h2 class="title animate-on-scroll stagger-3">Technology Analyst</h2>
+                    <p class="description animate-on-scroll stagger-4">
                         Results-oriented Analyst with 3+ years of experience developing and modernizing
                         enterprise applications.
                         I build scalable backend services, design robust REST APIs, and craft responsive UIs.
                     </p>
-                    <div class="cta-buttons">
+                    <div class="cta-buttons animate-on-scroll stagger-5">
                         <a href="#experience" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-secondary">Contact Me</a>
                     </div>
                 </div>
-                <div class="hero-image-container">
+                <div class="hero-image-container animate-fade-in stagger-3">
                     <div class="hero-abstract-art">
                         <div class="code-snippet">
                             <pre><code><span class="keyword">public class</span> <span class="class">Developer</span> {
@@ -80,10 +85,10 @@
 
         <!-- About Section -->
         <section id="about" class="section">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">About <span>Me</span></h2>
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">About <span>Me</span></h2>
                 <div class="about-grid">
-                    <div class="about-text glass-card">
+                    <div class="about-text glass-card animate-on-scroll stagger-1">
                         <h3 class="card-title">Professional Summary</h3>
                         <p>
                             I am a proactive problem-solver specializing in <strong>.NET Core, MS SQL Server, and modern
@@ -97,7 +102,7 @@
                             for complex challenges.
                         </p>
                     </div>
-                    <div class="quick-facts glass-card">
+                    <div class="quick-facts glass-card animate-on-scroll stagger-2">
                         <h3 class="card-title">Quick Facts</h3>
                         <ul class="facts-list">
                             <li><i class="fas fa-briefcase"></i> <span>2+ Years Experience</span></li>
@@ -112,11 +117,11 @@
 
         <!-- Skills Section -->
         <section id="skills" class="section bg-alt">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">My <span>Skills</span></h2>
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">My <span>Skills</span></h2>
                 <div class="skills-grid">
                     <!-- Backend -->
-                    <div class="skill-category glass-card hover-lift">
+                    <div class="skill-category glass-card hover-lift animate-on-scroll stagger-1">
                         <div class="skill-icon"><i class="fas fa-server"></i></div>
                         <h3>Backend Architecture</h3>
                         <ul class="skill-list">
@@ -129,7 +134,7 @@
                     </div>
 
                     <!-- Database -->
-                    <div class="skill-category glass-card hover-lift">
+                    <div class="skill-category glass-card hover-lift animate-on-scroll stagger-2">
                         <div class="skill-icon"><i class="fas fa-database"></i></div>
                         <h3>Database Management</h3>
                         <ul class="skill-list">
@@ -141,7 +146,7 @@
                     </div>
 
                     <!-- Frontend -->
-                    <div class="skill-category glass-card hover-lift">
+                    <div class="skill-category glass-card hover-lift animate-on-scroll stagger-3">
                         <div class="skill-icon"><i class="fab fa-angular"></i></div>
                         <h3>Frontend Development</h3>
                         <ul class="skill-list">
@@ -154,7 +159,7 @@
                     </div>
 
                     <!-- Tools -->
-                    <div class="skill-category glass-card hover-lift">
+                    <div class="skill-category glass-card hover-lift animate-on-scroll stagger-4">
                         <div class="skill-icon"><i class="fas fa-tools"></i></div>
                         <h3>Tools & Practices</h3>
                         <ul class="skill-list">
@@ -172,13 +177,13 @@
 
         <!-- Experience Section -->
         <section id="experience" class="section">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Work <span>Experience</span></h2>
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Work <span>Experience</span></h2>
                 <div class="timeline">
                     <!-- Experience Item 1 -->
-                    <div class="timeline-item">
+                    <div class="timeline-item animate-on-scroll stagger-1">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
+                        <div class="timeline-content glass-card hover-lift">
                             <span class="timeline-date">10/2022 – Present</span>
                             <div class="timeline-header">
                                 <h3 class="role">Technology Analyst</h3>
@@ -208,10 +213,10 @@
 
         <!-- Education Section -->
         <section id="education" class="section bg-alt">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">My <span>Education</span></h2>
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">My <span>Education</span></h2>
                 <div class="education-grid">
-                    <div class="education-card glass-card hover-lift">
+                    <div class="education-card glass-card hover-lift animate-on-scroll stagger-1">
                         <div class="edu-icon"><i class="fas fa-university"></i></div>
                         <div class="edu-details">
                             <span class="edu-date">08/2018 – 07/2022</span>
@@ -226,10 +231,10 @@
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <div class="container animate-on-scroll">
-                <h2 class="section-title">Get In <span>Touch</span></h2>
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Get In <span>Touch</span></h2>
                 <div class="contact-container">
-                    <div class="contact-info glass-card">
+                    <div class="contact-info glass-card animate-on-scroll stagger-1">
                         <h3>Let's Connect</h3>
                         <p>Feel free to reach out for collaborations or just a friendly chat.</p>
 
@@ -252,7 +257,7 @@
                         </div>
                     </div>
 
-                    <form class="contact-form glass-card" id="contactForm">
+                    <form class="contact-form glass-card animate-on-scroll stagger-2" id="contactForm">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" required placeholder="Your Name">
@@ -287,8 +292,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
